@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Error</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <meta charset="iso-8859-1" />
+        <meta name="title" content="[config_site_title] | Meu Carrinho" />       
+        <link rel="canonical" href="[baseUri]/cliente/cadastro/" />
+        <meta name="author" content="Rafael Clares" />
+        <meta name="robots" content="all" /> 
+        <meta name="language" content="br" /> 
+        <meta name="robots" content="follow" />	        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>     
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div class="row" id="main">
+                <div class="row-fluid">
+                    <div class="separator-bar">
+                        <p><i class="icon-info-sign icon-white"></i> Atenção</p>
+                    </div>
+                    <div class="page-content">
+                        <h1>
+                            [msg_error]
+                            <br />
+                            <a href="javascript:void(0)" onclick="javascript:history.back()">voltar</a>.
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>         
+    </body>
+</html>

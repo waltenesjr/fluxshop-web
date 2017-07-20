@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Identificação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>       
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]--> 
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a href="[baseUri]/cliente/">Área do Cliente</a></li>
+                    <li><a class="current">Meus endereços</a></li>
+                </ul>
+                <div class="row-fluid">                        
+                    <div class="separator-bar">
+                        <p class="radius-3"><i class="icon-user icon-white"></i> MEUS ENDEREÇOS </p>
+                    </div>
+                    <div class="page-content">
+                        [message_default]
+                        <p class="pull-right">
+                            <a href="[baseUri]/cliente/enderecoNovo/" class="btn btn-small btn-inverse f-white"><i class="icon-white icon-plus-sign"></i> Cadastrar Novo Endereço de Entrega</a>
+                        </p>
+                        <!--{loop:addr}-->
+                        <!--{<form id="f-atd" class="form validate" method="post" action="[baseUri]/cliente/enderecoAtualizar/addr.endereco_id/" >}-->
+                        <!--{<span class="separator-line">addr.endereco_title</span>}-->                                    
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_cep">CEP</label>}-->
+                        <!--{<input type="text" name="endereco_cep" id="endereco_cep" class="cep required" maxlength="9" value="addr.endereco_cep" placeholder="informe seu cep" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_rua">Endereço</label>}-->
+                        <!--{<input type="text" name="endereco_rua" id="endereco_rua" class="required" value="addr.endereco_rua" placeholder="nome da rua/av/logradouro" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_num">Número</label>}-->
+                        <!--{<input type="text" name="endereco_num" id="endereco_num" class="required" value="addr.endereco_num" placeholder="informe o número" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<label for="endereco_complemento">Complemento</label>}-->
+                        <!--{<input type="text" name="endereco_complemento" id="endereco_complemento" value="addr.endereco_complemento" placeholder="ex: Bloco 5 - Ap 200" />}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_bairro">Bairro</label>}-->
+                        <!--{<input type="text" name="endereco_bairro" id="endereco_bairro" class="required" value="addr.endereco_bairro" placeholder="informe o nome do bairro" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_cidade">Cidade</label>}-->
+                        <!--{<input type="text" name="endereco_cidade" id="endereco_cidade" class="required" value="addr.endereco_cidade" placeholder="informe o nome da cidade" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_uf">UF/Estado</label>}-->
+                        <!--{<input type="text" name="endereco_uf" id="endereco_uf" class="required" maxlength="2" value="addr.endereco_uf" placeholder="informe a UF / estado ex: SP" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<button type="submit" id="btn-update" class="btn btn-small"><i class="icon-refresh"></i> Atualizar Endereço</button>}-->
+                        <!--{</form>}-->
+                        <!--{<br /><br />}-->
+                        <!--{end:addr}-->
+
+                        <!--{loop:baddr}-->
+                        <!--{<form id="f-atd" class="form validate" method="post" action="[baseUri]/cliente/enderecoAtualizar/baddr.endereco_id/" >}-->
+                        <!--{<span class="separator-line">baddr.endereco_title</span>}-->                                    
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_title">Descrição (ex. Casa, Escritório...)</label>}-->
+                        <!--{<input type="text" name="endereco_title" id="endereco_title" class="required" value="baddr.endereco_title" placeholder="identificação do endereço (ex: casa)" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_cep">CEP</label>}-->
+                        <!--{<input type="text" name="endereco_cep" id="endereco_cep" class="cep required" maxlength="9" value="baddr.endereco_cep" placeholder="informe seu cep" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_rua">Endereço</label>}-->
+                        <!--{<input type="text" name="endereco_rua" id="endereco_rua" class="required" value="baddr.endereco_rua" placeholder="nome da rua/av/logradouro" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_num">Número</label>}-->
+                        <!--{<input type="text" name="endereco_num" id="endereco_num" class="required" value="baddr.endereco_num" placeholder="informe o número" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<label for="endereco_complemento">Complemento</label>}-->
+                        <!--{<input type="text" name="endereco_complemento" id="endereco_complemento" value="baddr.endereco_complemento" placeholder="ex: Bloco 5 - Ap 200" />}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_bairro">Bairro</label>}-->
+                        <!--{<input type="text" name="endereco_bairro" id="endereco_bairro" class="required" value="baddr.endereco_bairro" placeholder="informe o nome do bairro" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_cidade">Cidade</label>}-->
+                        <!--{<input type="text" name="endereco_cidade" id="endereco_cidade" class="required" value="baddr.endereco_cidade" placeholder="informe o nome da cidade" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<div>}-->
+                        <!--{<label for="endereco_uf">UF/Estado</label>}-->
+                        <!--{<input type="text" name="endereco_uf" id="endereco_uf" class="required" maxlength="2" value="baddr.endereco_uf" placeholder="informe a UF / estado ex: SP" />}-->
+                        <!--{<span class="f-atd-required">*</span>}-->
+                        <!--{</div>}-->
+                        <!--{<button type="submit" id="btn-update" class="btn btn-small"><i class="icon-refresh"></i> Atualizar Endereço</button>}-->
+                        <!--{<a id="baddr.endereco_id" href="javascript:void(0)" class="addr-remove btn btn-danger btn-small f-white"><i class="icon-trash icon-white"></i> Remover Endereço</a>}-->
+                        <!--{</form>}-->
+                        <!--{<br /><br />}-->
+                        <!--{end:baddr}-->
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal hide fade" id="modal-remove">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5><img src="images/icons/alert.png" /> Remover Endereço</h5>
+            </div>
+            <div class="modal-body">
+                <p>Este endereço está vinculado a um pedido e não pode ser excluído!</p>
+                <p>Você pode altera-lo se desejar!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" onclick="$('#modal-remove').modal('hide')" class="btn btn-small">Fechar</a>
+            </div>
+        </div>   
+
+        <div class="modal hide fade" id="modal-remove-confirm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5><img src="images/icons/alert.png" /> Remover Endereço</h5>
+            </div>
+            <div class="modal-body">
+                <p>Você está prestes a remover um endereç de entrega!</p>
+                <p>Deseja realmente prosseguir?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" onclick="$('#modal-remove-confirm').modal('hide')" class="btn btn-small">Cancelar</a>
+                <a href="javascript:void(0);" id="btn-remove-confirm" class="btn btn-small btn-danger">Confirmar Remoção</a>
+            </div>
+        </div> 
+        <?php include 'footer.html'; ?>  
+        <script src="js/public/cliente.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery.mask.js" type="text/javascript"></script>
+        <script src="js/jquery/validate/jquery.validate.v2.js" type="text/javascript"></script>
+        <!--[if IE]>
+        <script src="js/jquery/jquery.placeholder.js" type="text/javascript"></script>
+        <script>$(function() { $('input, textarea').placeholder();});</script>
+        <![endif]-->        
+        <script>[msg_error]</script>        
+    </body>
+</html>

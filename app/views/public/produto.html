@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[item_title] | [config_site_title]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <meta charset="iso-8859-1">
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="description" content="[item_title]" >
+        <meta name="keywords" content="[item_keywords]">
+        <meta name="application-name" content="Rafael Clares">
+        <meta name="title" content="[item_title] | [config_site_title]">       
+        <link rel="canonical" href="[baseUri]/produto/[categoria_url]/[sub_url]/[item_url]/[item_id]/">
+        <meta name="robots" content="all" /> 
+        <meta name="language" content="br" /> 
+        <meta name="robots" content="follow" />	        
+        <meta property="og:image" content="[baseUri]/thumb/[f_foto]/200/200/" />
+        <meta property="og:type" content="article" /> 
+        <meta property="og:description" content="[item_title] - [config_site_title]" />	
+        <meta property="og:url"  content="[baseUri]/produto/[categoria_url]/[sub_url]/[item_url]/[item_id]/" />
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="js/jquery/jcarousel/jcarousel.css" type="text/css" />
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <link rel="stylesheet" href="js/jquery/jqzoom/jquery.jqzoom.css"  media="screen" type="text/css"/>
+        <link rel="stylesheet" href="js/jquery/fancy/jquery.fancybox.css"  media="screen" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="js/jquery/fancy/helpers/jquery.fancybox-thumbs.css" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a href="[baseUri]/index/categoria/[categoria_url]/">[categoria_title]</a></li>
+                    <li><a href="[baseUri]/index/categoria/[categoria_url]/[sub_url]/">[sub_title]</a></li>
+                    <li><a class="current">[item_bread_title]</a></li>
+                </ul>
+
+                <div class="row-fluid">
+                    <div class="span5 [semFoto]" id="box-gallery">
+                        <div id="gallery-produto">
+                            <div class="zoom hidden-phone" id="zoom">
+                                <a href="[baseUri]/app/fotos/[f_big]" class="jqzoom" title="">
+                                    <img src="[baseUri]/thumb/[f_foto]/323/280/" data="[baseUri]/app/fotos/[f_big]"  title=""/>                      
+                                </a>
+                            </div>
+                            <div class="image_carousel">
+                                <div id="mycarousel">  
+                                    <!--{loop:fg}-->
+                                    <!--{<a href="[baseUri]/app/fotos/fg.foto_big" zoom="[item_zoom]" class="zoomer rel" data-fancybox-group="gallery" data-thumbnail="[baseUri]/thumb/fg.foto_url/74/70/">}-->
+                                    <!--{<img id="fg.foto_id" src="[baseUri]/thumb/t/fg.foto_url/74/70/" data="[baseUri]/app/fotos/fg.foto_big" /></a>}-->
+                                    <!--{end:fg}-->
+                                </div>
+                                <div class="clearfix"></div>
+                                <a class="prev" id="mycarousel_prev" href="#"><span>prev</span></a>
+                                <a class="next" id="mycarousel_next" href="#"><span>next</span></a>
+                            </div>                               
+                        </div>
+                    </div>
+
+                    <div class="span5 pull-right" id="desc-produto">
+                        <div class="box-detail">
+                            <h1>[item_title]</h1>
+                            <h4 class="desconto [showHide]">De R$ [item_valor_original]</h4>
+                            <h2>[item_preco]</h2>
+                            <div class="parcelamento [show_valor_parc]">
+                                <h3>Parcele em at� [item_parc]x no cart�o de cr�dito.</h3>
+                                [parcelas]
+                            </div>   
+                            <div class="span10 [show_hide_btn_comprar]">
+                                <form id="fattr" class="no-margin no-padding" method="post" onsubmit="return false">
+                                    <!--{loop:att}-->
+                                    <!--{<br/>}-->
+                                    <!--{<label>Op��es de att.atributo_nome dispon�veis:</label>}-->
+                                    <!--{<input type="hidden" class="attr_group" name="att.atributo_id" desc="att.atributo_short" id="att.atributo_id" value="" />}-->
+                                    <!--{<select class="attr_sel sel_att.atributo_id" id="att.atributo_id" desc="att.atributo_nome" group="att.atributo_id">}-->
+                                    <!--{<option class="attr" value="">selecione uma op��o...</option>}-->
+                                    <!--{loop:item}-->
+                                    <!--{<option class="attr" value="att.item.iattr_id" group="att.atributo_id">att.item.iattr_nome</option>}-->
+                                    <!--{end:item}-->
+                                    <!--{</select>}-->
+                                    <!--{<br/>}-->
+                                    <!--{end:att}-->
+                                </form>
+                                <p class="no-margin mar-top-30">
+                                    <br /><br />
+                                    <button class="btn btn-custom btn-large addtocart" id="[item_id]" 
+                                            data-loading-text="aguarde..."
+                                            data-complete-text="ok">
+                                        <i class="icon-shopping-cart icon-white"></i> 
+                                        COMPRAR 
+                                    </button>
+                                </p>
+                            </div>
+                        </div>                              
+                    </div>                             
+                </div>
+                <div class="span12 no-margin">
+                    <!--<div id="social-plugin" class="row">
+                        <p class="pull-right mar-top-40">
+                            [config_site_social]
+                        </p>
+                    </div> -->                     
+                    <div class="box-detail">
+                        <h3>Detalhes do Produto</h3>
+                        [item_desc]
+                        <br /><br /><br />
+                    </div>
+                </div>   
+                <br />       
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>        
+        <script src="js/jquery/jqzoom/jquery.jqzoom-core.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>
+        <script src="js/jquery/fancy/jquery.fancybox.js" type="text/javascript"></script>
+        <script src="js/jquery/fancy/helpers/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+        <script src="js/jquery/fancy/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery-ui-1.9.2.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery/jcarousel/jquery.carouFredSel.js"></script>
+        <script src="js/public/produto.js" type="text/javascript"></script>     
+    </body>
+</html>

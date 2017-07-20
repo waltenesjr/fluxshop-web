@@ -1,0 +1,48 @@
+<div id="footer" class="container-fluid">    
+    <div class="container">
+        <div class="">
+            <div class="span3 no-margin-left footer-menu no-margin"><h4>Minha Conta</h4>
+                <ul>
+                    <li class="nologged"><a href="[baseUri]/cliente/">Login</a></li>
+                    <li class="nologged"><a href="[baseUri]/cliente/cadastro/">Cadastro</a></li>
+                    <li class="logged"><a href="[baseUri]/cliente/dados/">Meus Dados</a></li>
+                    <li class="logged"><a href="[baseUri]/cliente/endereco/">Meus Endere�os</a></li>
+                    <li class="logged"><a href="[baseUri]/cliente/pedidos/">Meus Pedidos</a></li>
+                </ul>
+            </div>              
+            <!--{loop:f}-->
+            <!--{<div class="span3 no-margins footer-menu"><h4>f.area_title</h4>}-->
+            <!--{<ul>}-->
+            <!--{loop:p}-->
+            <!--{<li><a href="[baseUri]/pagina/f.p.page_url/">f.p.page_title</a></li>}-->
+            <!--{end:p}-->
+            <!--{</ul>}-->
+            <!--{</div>}-->                  
+            <!--{end:f}-->                                                   
+        </div>
+        <div class="no-margin forma-de-pagamento">
+            <h4>Formas de Pagamento</h4>
+            <div class=" pull-left [showPagSeguro]">
+                <img src="helpers/pagseguro/img/logo.png?v=1" />
+            </div>
+            <div class="pull-right [showPayBras]">
+                <img src="helpers/paybras/img/logo.png" />
+            </div>
+        </div>
+
+        <!--<div class="span12 no-margin">
+            [social_fb]
+        </div>-->
+    </div>
+</div>
+<script src="js/jquery/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script src="js/public/main.js" type="text/javascript"></script>
+<script>route = '[currentUri]';</script>
+<script>
+    var logged = [logged];
+    var catAct  = '[cat_active]';
+    var subAct  = '[sub_active]';
+    setActiveMenu(catAct,subAct);
+    replaceMenu(logged);
+</script>   
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Identificação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a href="[baseUri]/cliente/">Área do Cliente</a></li>
+                    <li><a class="current">Meus Dados</a></li>
+                </ul>	
+
+                <div class="row-fluid">                        
+                    <div class="separator-bar">
+                        <p class="radius-3"><i class="icon-user icon-white"></i> MEUS DADOS </p>
+                    </div>
+                    <div class="page-content">
+                        <form name="f-atd" id="f-atd" action="[baseUri]/cliente/atualizarDados/" autocomplete="off"
+                              class="form validate" method="post" >
+                            [message_default]
+                            <span class="separator-line">Dados pessoais</span>                                    
+                            <div>
+                                <label for="cliente_nome">Nome</label>
+                                <input type="text" name="cliente_nome" id="cliente_nome" class="required" value="[cliente_nome]" placeholder="informe seu nome completo" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>
+                                <label for="cliente_cpf">CPF</label>
+                                <input type="text" name="cliente_cpf" id="cliente_cpf" class="required cpf" value="[cliente_cpf]" placeholder="informe seu cpf" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>                                                                               
+                                <label for="cliente_datan">Data de Nascimento</label>
+                                <input type="text" name="cliente_datan" id="cliente_datan" class="required datar" value="[cliente_datan]" placeholder="informe sua data de nascimento" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+
+                            <span class="separator-line">contato</span>
+
+                            <div>
+                                <label for="cliente_telefone">Telefone Preferencial</label>
+                                <input type="text" name="cliente_telefone" id="cliente_telefone" class="required fone"  value="[cliente_telefone]"placeholder="informe um telefone de contato" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>                                        
+                                <label for="cliente_celular">Telefone Alternativo</label>
+                                <input type="text" name="cliente_celular" id="cliente_celular" class="fone" value="[cliente_celular]" placeholder="informe um telefone móvel" />
+                            </div>
+                            <span class="separator-line">Dados de acesso</span>
+                            <div>
+                                <label for="cliente_email">E-mail</label>
+                                <input type="text" name="cliente_email" id="cliente_email" class="required email"  disabled value="[cliente_email]" placeholder="informe seu e-mail"/>
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>
+                                <label for="cliente_password">Senha</label>
+                                <input type="password" name="cliente_password" id="cliente_password"  class="password" minlength="6" autocomplete="off"
+                                       placeholder="Informe sua senha" />                                         
+                                <span class="f-atd-required"></span>
+                            </div>
+                            <div>
+                                <label for="cliente_passwordr">Confirme sua senha</label>
+                                <input type="password" name="cliente_passwordr" id="cliente_passwordr"  class="password" minlength="6" autocomplete="off"
+                                       placeholder="Confirmar sua senha" /> 
+                                <span class="f-atd-required"></span>
+                            </div>
+                            <br />
+                            <button type="submit" id="btn-update" class="btn">
+                                <i class="icon-refresh"></i> Atualizar Cadastro</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>  
+        <script src="js/public/cliente.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>
+        <script src="js/jquery/jquery.mask.js" type="text/javascript"></script>
+        <script src="js/jquery/validate/jquery.validate.v2.js" type="text/javascript"></script>
+        <!--[if IE]>
+        <script src="js/jquery/jquery.placeholder.js" type="text/javascript"></script>
+        <script>$(function() { $('input, textarea').placeholder();});</script>
+        <![endif]-->        
+        <script>[msg_error]</script>        
+    </body>
+</html>

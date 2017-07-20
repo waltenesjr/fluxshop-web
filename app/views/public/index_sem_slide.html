@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] - [message_bar]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="author" content="Rafael Clares">                       
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->		
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <link href="js/jquery/sliderctrl/css/slider.css" rel="stylesheet" type="text/css"/>  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div class="" id="main">             
+                <div class="hidden-phone">[migalhas-de-pao]</div>
+                <div class="pull-left span2 no-margin hidden-phone">
+                    <div class="menu-filtro">
+                        <br />										
+                        <div id="elm-filtro-range-preco">
+                            <h5><i class="glyphicon glyphicon-usd"></i> Filtrar Por Valor</h5>
+                            <p id="p-range-preco"></p>
+                            <br />										
+                        </div>										
+                        <h5>Filtrar por Categorias</h5>
+                        <!--{loop:menu}-->						
+                        <!--{<p class="filtro-categoria"><strong><a href="[baseUri]/index/categoria/menu.categoria_url/" class="l-menu.categoria_url">menu.categoria_title</a></strong>}-->
+                        <!--{loop:sub}-->
+                        <!--{<p class="filtro-sub-categoria"><a href="[baseUri]/index/categoria/menu.categoria_url/menu.sub.sub_url/" class="l-menu.sub.sub_url">menu.sub.sub_title menu.sub.itens</a></p>}-->
+                        <!--{end:sub}-->   
+                        <!--{end:menu}-->
+                    </div>
+                </div>
+
+                <div class="pull-right no-margin span9">
+
+					<div class="row">
+                        <div class="span3 pull-right">
+                            <select class="pull-right sort-list form-control">
+                                <option value="0">Ordernar Por...</option>
+                                <option value="menor-preco">Menor Preço</option>
+                                <option value="maior-preco">Maior Preço</option>
+                                <option value="mais-vistos">Popularidade</option>
+                                <option value="mais-novos">Mais Novos</option>
+                                <option value="a-z">A-Z</option>
+                                <option value="z-a">Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <p>&nbsp;</p>
+                        <div class="box-all">
+                            <!--{loop:i}-->
+                            <!--{<div class="span2 item-box" preco="i.item_valor_sem_mask" id="i.item_id">}-->
+                            <!--{  <a href="[baseUri]/produto/i.categoria_url/i.sub_url/i.item_url/i.item_id/">}-->
+                            <!--{     <div class="box-item tips-bottom" title="ver detalhes">}-->
+                            <!--{        <div class="box-item-oferta-i.item_oferta"><span class="label label-important">Oferta</span></div>}-->
+                            <!--{        <div class="box-item-foto"><img src="[baseUri]/thumb/t/i.foto_url/170/170/ratio/"  /></div>}-->
+                            <!--{        <div class="box-item-detalhe">}-->
+                            <!--{          <h2>i.item_short_title</h2>}-->
+                            <!--{          <h4 class="i.showHide">De R$ i.item_valor_original</h4>}-->
+                            <!--{          <h3>i.item_preco <br/> <small>i.item_valor_parc</small></h3>}-->
+                            <!--{        </div>}-->                            
+                            <!--{     </div>}-->
+                            <!--{  </a>}-->
+                            <!--{</div>}-->
+                            <!--{end:i}-->
+                            [message_default]
+                        </div>
+                    </div>
+
+
+                    <div class="text-center span8">
+                        <button class="btn btn-custom btn-load-more" id="carregar-mais">
+                            <i class="icon-plus-sign icon-white"></i>
+                            Ver mais resultados
+                        </button>
+                        <br /><br />
+                    </div>
+
+                    <p class="pull-right text-center up2top">
+                        <img src="images/layout/up2top.png"/><br />
+                        Para o Topo
+                    </p>
+
+                </div>
+            </div>            
+        </div>         
+        <?php include 'footer.html'; ?>        
+        <script src="js/jquery/sliderctrl/js/bootstrap-slider.js" type="text/javascript"></script>
+        <script type="text/javascript">[action_on_load] /*show-hide btn-more*/ </script>
+    </body>
+</html>

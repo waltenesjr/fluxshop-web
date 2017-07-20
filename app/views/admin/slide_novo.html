@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Painel Administrativo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery-ui-1.9.2.js" type="text/javascript"></script>
+        <script src="js/jquery/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery/stupidtable.js" type="text/javascript"></script>
+        <script src="js/admin/main.js" type="text/javascript"></script>
+        <script src="js/admin/slide.js" type="text/javascript"></script>
+        <link href="js/jquery/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="css/admin/main.css" rel="stylesheet" />
+        <link href="css/default/fakeinput.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="" id="main">
+            <div class="row-fluid">
+                <div id="top"><h1>[config_site_title]</h1></div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 bar">
+                    <div class="span3"></div>
+                    <div class="span9">
+                        <div class="pull-right btn-toolbar" style="margin: 0;margin-top:7px;">
+                            <div class="btn-group dropdown">
+                                <button class="btn-mini btn primary btn-inverse"> <i class="icon icon-user icon-white"></i> [user_name]</button>
+                                <button class="btn-mini btn primary btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="[baseUri]/admin/usuario/me/" style="font-size: 9px;">Meus Dados</a></li>
+                                    <li><a href="[baseUri]/admin/login/logout/" style="font-size: 9px;">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+
+                <div class="span2 pull-left">
+                    <dl id="nav-left">
+                        <dt class="active"><a href="javascript:void(0);" id="dash"><i class="icon-th icon-white"></i> Dashboard <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/"><i class="icon-home icon-white"></i> Home</a></li>
+                                <li><a href="[baseUri]/admin/dashboard/itens/"><i class="icon-star icon-white"></i> Produtos Mais Visitados</a></li>
+                                <li><a href="[baseUri]/admin/pedido"><i class="icon-fire icon-white"></i> Últimos Pedidos</a></li>
+                                <li><a  class="active" href="[baseUri]/admin/slideshow/"><i class="icon-camera icon-white"></i> Slideshow e Banners</a></li>
+                                <li><a href="[baseUri]/atd/" target="_blank"><i class="icon-comment icon-white"></i> Atendimento Online</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);" id="m1"><i class="icon-filter icon-white"></i> Categorias <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/categoria/"><i class="icon-tag icon-white"></i> Gerenciar Categorias</a></li>
+                                <li><a href="[baseUri]/admin/subcategoria/"><i class="icon-tags icon-white"></i> Gerenciar Subcategorias</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);"><i class="icon-gift icon-white"></i> Produtos <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/item/novo/"><i class="icon-plus-sign icon-white"></i> Cadastrar Produto</a></li>
+                                <li><a href="[baseUri]/admin/item/"><i class="icon-th-list icon-white"></i> Produtos Cadastrados</a></li>
+                                <li><a href="[baseUri]/admin/item/busca/"><i class="icon-search icon-white"></i> Pesquisar Produto</a></li>
+                                <li><a href="[baseUri]/admin/atributo/"><i class="icon-tags icon-white"></i> Gerenciar Atributos</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);"><i class="icon-shopping-cart icon-white"></i> Pedidos <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/pedido/"><i class="icon-th-list icon-white"></i> Lista de Pedidos</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);"><i class="icon-briefcase icon-white"></i> Clientes <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/cliente/"><i class="icon-th-list icon-white"></i> Lista de Clientes</a></li>
+                            </ul>
+                        </dd>
+                        <dt class="[showhide]"><a href="javascript:void(0);"><i class="icon-minus-sign icon-white"></i> Cupons <b class="icon-chevron-down"></b></a></dt>
+                        <dd class="[showhide]">
+                            <ul>
+                                <li><a href="[baseUri]/admin/cupom/"><i class="icon-cog icon-white"></i> Gerenciar Cupons</a></li>
+                            </ul>
+                        </dd>                          
+                        <dt class="[showhide]"><a href="javascript:void(0);"><i class="icon-barcode icon-white"></i> Pagamento <b class="icon-chevron-down"></b></a></dt>
+                        <dd class="[showhide]">
+                            <ul>
+                                <li><a href="[baseUri]/admin/pagamento/pagseguro/"><i class="icon-cog icon-white"></i> Módulo PagSeguro</a></li>
+                                <li><a href="[baseUri]/admin/pagamento/paybras/"><i class="icon-cog icon-white"></i> Módulo PayBras</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);"><i class="icon-road icon-white"></i> Frete e Entrega <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/frete/"><i class="icon-cog icon-white"></i> Opções de Frete</a></li>
+                                <li><a href="[baseUri]/admin/entrega/"><i class="icon-map-marker icon-white"></i> Frete Diferenciado</a></li>
+                                <li><a href="[baseUri]/admin/retirada/"><i class="icon-map-marker icon-white"></i> Locais de Retirada</a></li>
+                            </ul>
+                        </dd>
+                        <dt><a href="javascript:void(0);"><i class="icon-file icon-white"></i> Páginas e Conteúdo <b class="icon-chevron-down"></b></a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="[baseUri]/admin/area/"><i class="icon-tag icon-white"></i> Gerenciar Áreas</a></li>
+                                <li><a href="[baseUri]/admin/pagina/"><i class="icon-pencil icon-white"></i> Gerenciar Páginas</a></li>
+                            </ul>
+                        </dd>                     
+                        <dt class="[showhide]"><a href="javascript:void(0);"><i class="icon-wrench icon-white"></i> Configurações <b class="icon-chevron-down"></b></a></dt>
+                        <dd class="[showhide]">
+                            <ul>
+                                <li><a href="[baseUri]/admin/configuracao/"><i class="icon-cog icon-white"></i> Informações da Loja</a></li>
+                                <li><a href="[baseUri]/admin/smtpc/"><i class="icon-envelope icon-white"></i> Configurar E-mail</a></li>
+                                <li><a href="[baseUri]/admin/social/"><i class="icon-retweet icon-white"></i> Plugin Redes Sociais</a></li>
+                            </ul>
+                        </dd>
+                        <dt class="[showhide]"><a href="javascript:void(0);"><i class="icon-user icon-white icon-white"></i> Usuários do Sistema <b class="icon-chevron-down"></b></a></dt>
+                        <dd class="[showhide]">
+                            <ul>
+                                <li><a href="[baseUri]/admin/usuario/operadores/"><i class="icon-user icon-white"></i> Operadores</a></li>
+                                <li><a href="[baseUri]/admin/usuario/administradores/"><i class="icon-user icon-white"></i> Administradores</a></li>
+                                <li><a href="[baseUri]/admin/usuario/novo/"><i class="icon-plus-sign icon-white"></i> Novo Usuário</a></li>
+                            </ul>
+                        </dd>                         
+                    </dl>                       
+                </div>                 
+                <div class="span10 pull-right" id="sright">
+                    <div class="row-fluid">
+
+                        <div class="panel panel-box">
+                            <div class="title-grid-inverse">
+                                <i class="icon-pencil icon-white"></i>  <b>Cadastrar Novo Slide</b>
+                            </div>                            
+                            <div class="box-cart" style="padding:10px;">  
+                                <form name="f-pagina" id="f-pagina" class="form mar-top-10" method="post" 
+                                      enctype="multipart/form-data"
+                                      action="[baseUri]/admin/slideshow/incluir/">
+
+                                    <div class="fakeipt">
+                                        <p class="well well-small" style="color: #333;margin-bottom: 0px;"><i class="icon-picture"></i> 
+                                            <strong>Imagem do Slide:</strong>
+                                        </p>
+                                        <div class="uploader black">
+                                            <input type="text" class="filename" readonly="readonly"/>
+                                            <input type="button" name="file" id="file" class="button" value="Selecionar"/>
+                                            <input type="file" name="filedata" size="30"/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="well well-small mar-top-5" style="color: #333;margin-bottom: 3px;"><i class="icon-text-width"></i> 
+                                            <strong>Local do Slide:</strong>
+                                        </p>                                        
+                                        <select class="span6 w-all" name="slide_local" id="slide_local">
+                                            <option value="1">Selecione o local do slide...</option>
+                                            <option value="1">Slideshow Topo (870 x 320)</option>
+                                            <option value="2">Banner Lateral (270 x 220)</option>
+                                            <option value="3">Banner Lateral (270 x 600)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="for-slide-top">
+                                        <p class="well well-small mar-top-5" style="color: #333;margin-bottom: 3px;"><i class="icon-text-width"></i> 
+                                            <strong>Título do Slide:</strong>
+                                        </p>                                        
+                                        <input class="span6 ucfirst w-all" name="slide_title" id="slide_title"
+                                               type="text" placeholder="informe uma breve título do slide"/>
+                                    </div>
+                                    <div class="for-slide-top">
+                                        <p class="well well-small mar-top-10" style="color: #333;margin-bottom: 5px;"><i class="icon-pencil"></i> 
+                                            <strong>Subtítulo do Slide:</strong>
+                                        </p>                                         
+                                        <input class="span6 ucfirst w-all" name="slide_desc" 
+                                               id="slide_desc" maxlength="50" type="text" placeholder="informe uma breve descrição do slide"/>
+                                    </div>
+                                    <div>
+                                        <p class="well well-small mar-top-10" style="color: #333;margin-bottom: 5px;"><i class="icon-share-alt"></i> 
+                                            <strong>Link do Slide:</strong>
+                                        </p>                                         
+                                        <input class="span6 ucfirst w-all" name="slide_link" 
+                                               id="slide_link" type="text" placeholder="link interno para o slide"/>
+                                    </div>
+
+                                    <button type="submit" class="btn mar-top-10"><i class="icon-ok"></i> Cadastrar Slide</button>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12 bar"></div>
+                </div>           
+
+                <div class="row-fluid">
+                    <div id="footer"></div>
+                </div>            
+
+            </div><!--end row-fluid-->             
+
+        </div> <!--end main-->
+
+        <div class="modal hide fade" id="modal-remove">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5><img src="images/icons/alert.png" /> Remover Página</h5>
+            </div>
+            <div class="modal-body">
+                <p>Você está prestes a remover uma categoria e todos os seus itens!</p>
+                <p>Deseja realmente prosseguir?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" onclick="$('#modal-remove').modal('hide')" class="btn btn-small">Cancelar</a>
+                <a href="javascript:void(0);" id="btn-remove" class="btn btn-small btn-danger">Confirmar Remoção</a>
+            </div>
+        </div>    
+        <script>
+            window.onload = function(){
+                [msgOnload]
+            }
+        </script>      
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("input[type=file]").change(function(){$(this).parents(".uploader").find(".filename").val($(this).val());});
+                $("input[type=file]").each(function(){
+                    if($(this).val()==""){$(this).parents(".uploader").find(".filename").val("Nenhum arquivo selecionado...");}
+                });
+            });
+        </script>        
+    </body>
+</html>

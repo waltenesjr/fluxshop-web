@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finalização de Compra | [config_site_title]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <style>#main{min-height: 300px;}</style>
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>    
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <div class="status-compra confirmacao"></div>
+                <div class="separator-bar no-margin"><p><i class="icon-white  icon-info-sign"></i> Finalização de compra na [config_site_title] - Confirmação de pedido</p></div>
+                <div class="page-content no-margin">
+                    <div class="tab-pane" id="end2">
+                        <form action="[baseUri]/finalizar/checkout/" method="post">
+                            <div id="finaliza-pagamento" class="border-bottom">
+                                <br />
+                                <div class="box-cart">        
+
+                                    <table >
+                                        <thead>
+                                            <tr>
+                                                <th width="70">&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                                <th width="120" style="text-align: left;">quantidade</th>
+                                                <th width="120" style="text-align: left;">valor unitário</th>
+                                                <th width="180" style="text-align: left;">valor total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--{loop:cart}-->
+                                            <!--{<tr id="tr_cart.cart_id">}-->
+                                            <!--{<td>}-->
+                                            <!--{<div><img id="div_foto_cart.cart_id" src="[baseUri]/thumb/cart.item_foto/70/70/crop/" /></div>}-->
+                                            <!--{</td>}-->
+                                            <!--{<td>}-->
+                                            <!--{<p>cart.item_title<br/> cart.atributo_ped</p>}-->
+                                            <!--{</td>}-->
+                                            <!--{<td>}-->
+                                            <!--{<span class="input_qtde" id="input_qtde_cart.cart_id">cart.item_qtde</span>}-->
+                                            <!--{</td>}-->
+                                            <!--{<td>}-->
+                                            <!--{<p><span class="linet cart.showhide_valorOri">R$ cart.item_valor_original</span> <br class="cart.showhide_valorOri" />}-->
+                                            <!--{R$ cart.item_preco</p>}-->
+                                            <!--{</td>}-->                            
+                                            <!--{<td>}-->
+                                            <!--{<p>R$ <span id="sp_total_cart.cart_id">cart.valor_total</span></p>}-->
+                                            <!--{</td>}-->                            
+                                            <!--{</tr>}-->
+                                            <!--{end:cart}-->
+                                            <tr>
+                                                <td colspan="3">
+                                                    <table id="tbl_calculo_frete">
+                                                        <tr>
+                                                            <td>
+                                                                <i class="icon-map-marker"></i> 
+                                                                [local_entrega] <br/>
+                                                                &nbsp; &nbsp; &nbsp;
+                                                                <a href="[baseUri]/finalizar/entrega/">alterar local</a>
+                                                            </td>
+                                                            <td width="140">&nbsp;</td>
+                                                            <td width="120">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <p class="font-custom font-bold">Valor do Frete:</p>
+                                                </td>
+                                                <td>
+                                                    [frete_valor] 
+                                                    <br/>
+                                                    Prazo: [frete_prazo].
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3">
+                                                    &nbsp;
+                                                </td>
+                                                <td>
+                                                    <p class="font-bold">Subtotal:</p>
+                                                </td>
+                                                <td>
+                                                    <p>R$ [total_com_frete]</p>
+                                                </td>
+                                            </tr> 
+
+                                            <tr class="">
+                                                <td colspan="3">
+                                                    <br />
+                                                    <div class="form-inline">
+                                                        <div class="input-prepend input-append">
+                                                            <span class="add-on add-on-custom">Usar Cupom</span>
+                                                            <input type="text" name="cupom" id="cupom" value="[cupom_alfa]" placeholder="digite ou cole aqui o seu cupom" />
+                                                            <a href="javascript:void(0)" class="btn btn-custom btn-cupom-valida tips-right [btn-cupom-remove]" title="atualizar cupom">
+                                                                <i class="icon-refresh icon-white"></i> 
+                                                            </a>
+                                                            <a href="javascript:void(0)" class="btn btn-custom tips-right btn-cupom-valida [btn-cupom-valida]" title="validar cupom">
+                                                                <i class="icon-ok-circle icon-white"></i> 
+                                                            </a>
+                                                        </div>
+                                                        <span id="cupom-msg" class="mar-left-120">&nbsp; [cupom_msg]</span>
+                                                        <br />
+                                                        <span class="bg-gray [btn-cupom-remove]"></span>
+                                                        <br />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="font-red font-bold [btn-cupom-remove]">Desconto: &nbsp;</p>
+                                                </td>
+                                                <td>
+                                                    <p class="font-red [btn-cupom-remove]">
+                                                        <span class="font-bold"> -[valor_desconto]</span>  
+                                                        &nbsp;
+                                                        <a href="javascript:void(0)" class="tips-top" title="[cupom_desconto_info]"><b class="icon-question-sign"></b></a>
+                                                    </p>
+                                                </td>
+                                            </tr> 
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                            </tr>                                    
+                                        </tfoot>
+                                    </table>
+                                    <p class="a-right total_compra font-14">
+                                        <span class="[btn-cupom-remove]">Valor Total: R$ [total_com_desconto] <br /></span>
+                                        <span class="[btn-cupom-valida]">Valor Total: R$ [total_sem_desconto] <br /></span>
+                                    </p>                                                
+                                    <?php global $btn_popup; if($btn_popup == false):?>
+                                    <div class="pull-right">
+                                        <button class="btn btn-success btn-large" data-loading-text="Aguarde..." 
+                                                id="btn-finaliza">Concluir Pedido</button>
+                                    </div>
+                                    <?php else:?>                                   
+                                    <div class="pull-right">
+                                        <a href="[pay_gw_url]" target="_parent" class="btn btn-custom fancybox fancybox.iframe"
+                                           id="btn-finaliza-iframe">Concluir Pedido</a>
+                                    </div>                                    
+                                    <?php endif;?>
+                                </div>
+                                <p>&nbsp;</p>  
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>   
+        <script src="js/public/finalizar.js" type="text/javascript"></script>
+        <script>[msg_error]</script>        
+        <script>[evt_onload]</script>        
+        <link rel="stylesheet" href="js/jquery/fancy/jquery.fancybox.css"  media="screen" type="text/css"/>
+        <script src="js/jquery/fancy/jquery.fancybox.js" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $("a.fancybox").fancybox({
+                    'width': 990, 
+                    'height': 650,
+                    'type': 'iframe',                     
+                    'hideOnOverlayClick' : false,
+                    'hideOnContentClick' : false,
+                    afterClose  : function() {
+                        //location.href = "";
+                    }                    
+                });
+                [showPayWindow]
+            })
+        </script>      
+    </body>
+</html>

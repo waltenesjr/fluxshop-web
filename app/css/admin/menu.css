@@ -1,0 +1,90 @@
+/*Menu*/
+#nav-left {
+    margin: 0px;
+    padding: 0px;
+    min-height: 150px;
+}
+#nav-left i{
+    margin-top: 1px;
+    padding-right: 6px;
+}
+#nav-left b{
+    float: right;
+    margin-top: 3px;
+}
+#nav-left a {
+    text-decoration: none !important;
+}
+#nav-left * { 
+    margin: 0; 
+    font-family: 'Open Sans',verdana,arial,sans-serif;
+}
+dt{ 
+    /*background: url(../../images/layout/bg.png); */
+    background: url(../../images/layout/menu-left-bg.png); 
+    padding:6px; 
+    font-size: 9px; 
+    line-height: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+dt i {
+    margin-top: -1px !important;
+}
+dt a{ 
+    display:block; 
+    width:100%; 
+    color:#fff;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;   
+    font-size: 9px; 
+    cursor: default;  /*Remover essa linha para accordion*/  
+}
+
+dt a:hover{ 
+    display:block; 
+    width:100%; 
+    color:#fff;
+    font-size: 9px; 
+}
+/* remover comentario para accordion
+dt:hover{
+    color:#fff;
+    background: url(../../images/layout/active.png); 
+    font-size: 9px; 
+} 
+*/
+dt.active { 
+    background: url(../../images/layout/active.png);  
+    color:#fff;
+    font-size: 9px; 
+}
+dd a { 
+    padding:4px;
+    padding-left:8px;
+    color: #fff; 
+    display:block; 
+    background: #333C46;  
+    font-size: 11px; 
+}
+dd a:hover { 
+    padding:4px;
+    padding-left:13px;
+    color: #fff; 
+    display:block; 
+    background: url(../../images/layout/active.png); 
+    font-size: 11px; 
+}
+dd a.active{
+    padding:4px;
+    color: #fff; 
+    display:block; 
+    /*background: url(../../images/layout/active.png); */
+    font-size: 11px;     
+    opacity: 0.7;
+    padding-left: 8px;
+}
+#nav-left ul { 
+    list-style: none; 
+}

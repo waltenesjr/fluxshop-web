@@ -1,0 +1,555 @@
+
+.secured_text{
+    float: left;
+    width: 76px;
+    font-size: 10px;
+    line-height: 10px;
+    margin-top: 9px;
+    font-weight: bold;
+    margin-right: 6px;
+    margin-left: 5px;
+}
+
+#protected {
+    width: 175px;
+    float: left;
+    margin-left: 125px;
+}
+
+.data{
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    padding: 15px 15px 15px;
+    min-height: 100%;
+    overflow:hidden;
+}
+
+.control-group {
+    float: left;
+    margin-right: 30px;
+    height: 75px !important;
+}
+
+.tituloInput{
+    font-weight: bold;
+}
+
+
+.storeName{
+    text-shadow: 1px 1px 0px #cccccc;
+    display: inline;
+    right: 0px;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
+#navBar{
+    padding: 0 10px;
+    font-size: 16px;
+    height: 25px;
+    border-top: 1px solid #f5f5f5;
+}
+
+#navBar .item{
+    line-height: 25px;
+    float: left;
+    margin-right: 20px;
+    color: #0d83a5;
+}
+
+#navBar .item a{
+    /*cursor: pointer;*/
+    color: #0d83a5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*#navBar .item a:hover,*/
+#navBar .item a.active{
+    color: #d8a727;
+}
+
+#miniCart{
+    line-height: 24px;
+    padding: 0;
+    height: 23px;
+    width: 100%;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+#miniCart .description{
+    float: left;
+    margin-left: 10px;
+}
+
+#miniCart .showDetails{
+    margin-left: 20px;
+    text-align: center;
+    float: left;
+    color: #0d83a5;
+}
+
+#miniCart .total{
+    margin-right: 10px;
+    float: right;
+}
+
+#miniCart .showDetails span{
+    cursor: pointer;
+}
+
+.span9 {
+    width: 650px;
+}
+
+#details{
+    display: none;
+    float: left;
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+}
+#details table{
+    font-size: 14px;
+    border-spacing: 0;
+    margin-bottom: 0;
+}
+
+#details table thead tr{
+    background-color: #f5f5f5;
+}
+
+#details table thead th{
+    padding: 4px 10px;
+}
+
+#details table tbody tr,
+#pay table tr{
+    background-color: #ffffff;
+
+}
+
+#details table tbody td,
+#pay table td{
+    border-bottom: 1px solid #f5f5f5;
+    padding: 4px 10px;
+}
+
+#pay table td{
+    vertical-align: middle;
+}
+
+#details table tbody tr:nth-child(even),
+#pay table tbody tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+#details table tbody tr:nth-child(odd),
+#pay table tbody tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+.checkoutStep{
+    font-size: 14px;
+    margin: 10px 0;
+    float: left;
+    width: 100%;
+}
+
+input, select{
+    outline: none;
+    margin-bottom: 0px !important;
+}
+
+
+input[type="text"],
+select{
+    height: 25px;
+    background-color: #f5f5f5;
+    border: 2px inset #0d83a5;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 8px 0 0 !important;
+    float: left;
+}
+
+label.error{
+    font-size: 11px;
+    color: red;
+    font-style: italic;
+    background-color: #FFFFFF;
+    margin-top: 0px !important;
+}
+
+.control-group.error {
+    background-color: #FFFFFF;
+}
+
+.errorMsg{
+    font-size: 14px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.errorField{
+    background-color: rgba(255,0,0,0.25) !important;
+    border: 2px inset #ff0000 !important;
+}
+
+.line{
+    height: 35px;
+    padding: 0 10px;
+}
+
+.line .field25{
+    float: left;
+    width: 25%;
+}
+
+.line .field50{
+    float: left;
+    width: 50%;
+}
+
+.line .field75{
+    float: left;
+    width: 75%;
+}
+
+
+.line label{
+    line-height: 30px;
+    float: left;
+    display: block;
+    text-align: right;
+    overflow: hidden;
+}
+
+#identification .line label{
+    width: 75px;
+}
+
+#pay .line label{
+    width: 150px;
+}
+
+.width25{
+    width: 25px !important;
+}
+.width40{
+    width: 40px !important;
+}
+.width50{
+    width: 50px !important;
+}
+.width60{
+    width: 60px !important;
+}
+.width75{
+    width: 75px !important;
+}
+.width90{
+    width: 90px !important;
+}
+
+.width100{
+    width: 100px !important;
+}
+
+.width130{
+    width: 130px !important;
+}
+
+.width140{
+    width: 140px !important;
+}
+
+.width200{
+    width: 200px !important;
+}
+
+.width300{
+    width: 300px !important;
+}
+
+.mleft70{
+    margin-left: 70px !important;
+}
+
+h5 {
+    color: #765E21 !important;
+}
+
+.center{
+    text-align: center;
+}
+
+#pay,#confirmation{
+    display: none;
+}
+
+#pay table{
+    border-spacing: 0;
+    float: left;
+}
+
+.pgto {
+    max-width: 75% !important;
+}
+
+#card, #debt, #bill{
+    width: 100%;
+    float: left;
+}
+
+.btn{
+    margin-bottom: 30px;
+}
+
+#pay #card .parcelaOpt{
+    height: 15px;
+}
+#pay #card .parcelaLabel{
+    font-size: 12px;
+    display: inline;
+    line-height: normal;
+    text-align: left;
+}
+
+
+
+.payOptImg{
+    float: right;
+}
+
+.tooltip{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.text-popover{
+    font-size: 8px;
+    margin-top: 20px;
+}
+
+.popover{
+    width: 500px !important;
+    max-width: 500px !important;
+}
+
+.popover-title{
+    font-weight: bold;
+}
+
+.icon-question-sign{
+    vertical-align: middle !important;
+    height: 15px !important;
+}
+
+#cartao_parcela{
+    float: none !important;
+    min-height: 100%;
+    height: 100% !important;
+    overflow: hidden;
+}
+
+.table-condensed th {
+    background-color: #d8a727;
+    border-bottom: 1px !important;
+    text-align: center !important;
+}
+
+.confirm{
+    background-color:#F0F0F0;
+    padding: 8px 5px 8px 14px !important;
+    vertical-align: middle;
+    height: 130px;
+}
+
+.transaction{
+    background-color:#F0F0F0;
+    padding: 8px 5px 8px 14px !important;
+    text-align: center;
+    height: 130px;
+}
+
+.alert h4 {
+    margin: 20px !important;
+}
+
+#div_clock{
+    margin-top: 40px;
+    margin-left: 88px;
+    width: 320px !important;
+}
+
+#div_redirect{
+    margin-top: 30px;
+}
+
+#alerts{
+    width: 660px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: 22px;
+}
+
+#parcelas {
+    max-width: 260px !important;
+    width: 100%;
+    margin-bottom: 0px !important;
+}
+
+#parcelas span {
+    margin-left: 8px;
+    font-size: 12px !important;
+}
+
+#parcelas span b {
+    font-size: 14px !important;
+}
+
+#parcelas label{
+    margin-top: 4px !important;
+}
+
+#parcelas input[type="radio"] {
+    margin: 4px 0 0 !important; 
+}
+
+#parcelas td {
+    padding: 0px 10px !important;
+}
+
+.botao{
+    width: 300px;
+    margin-top: 7px;
+}
+
+.pgto_text{
+   text-align: center;
+    margin-left: 50px;
+    margin-right: 50px; 
+}
+
+#valores {
+    width: 250px;
+    margin-top: 20px;
+}
+
+#boleto {
+    margin-right: 20px;
+}
+
+.pgto_paybras .error{
+    border: 0px !important;
+}
+
+#error_msg{
+    margin-bottom: 0px !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card .visa, .card .master, .card .amex, .card .diners, .card .elo, .debt .bb, .debt .itau, .breve .bradesco, .bill .boleto, .card .paybras {
+    background: url(../img/sprite_card.png) no-repeat;
+    width: 70px;
+    height: 27px;
+}
+
+.bradesco {
+    float: left;
+}
+
+.card .visa {
+    background-position: 20px 0;
+}
+
+.card .master {
+    background-position: 20px -28px;
+}
+
+.card .amex {
+    background-position: 20px -364px;
+}
+
+.card .diners {
+    background-position: 20px -84px;
+}
+
+.card .elo {
+    background-position: 20px -140px;
+}
+
+.debt .bb {
+    background-position: 20px -224px;
+}
+
+.debt .itau {
+    background-position: 20px -280px;
+}
+
+.breve .bradesco {
+    background-position: 20px -252px;
+}
+
+.bill .boleto {
+    background-position: 20px -196px;
+}
+
+.card .paybras {
+    background-position: 20px -168px;
+}
+
+.card .visa:hover {
+    background-position: -68px 0;
+}
+
+.card .master:hover {
+    background-position: -68px -28px;
+}
+
+.card .amex:hover {
+    background-position: -68px -364px;
+}
+
+.card .diners:hover {
+    background-position: -68px -84px;
+}
+
+.card .elo:hover {
+    background-position: -68px -140px;
+}
+
+.debt .bb:hover {
+    background-position: -68px -224px;
+}
+
+.debt .itau:hover {
+    background-position: -68px -280px;
+}
+
+.breve .bradesco:hover {
+    background-position: -68px -252px;
+}
+
+.bill .boleto:hover {
+    background-position: -68px -196px;
+}
+
+.card .paybras:hover {
+    background-position: -68px -168px;
+}
+
+.hide{
+    display: none;
+}
+
+.popup{
+    cursor: pointer;
+}

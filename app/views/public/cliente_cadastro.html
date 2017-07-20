@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Identificação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <meta charset="iso-8859-1" />
+        <meta name="title" content="[config_site_title] | Meu Carrinho" />       
+        <link rel="canonical" href="[baseUri]/cliente/cadastro/" />
+        <meta name="author" content="Rafael Clares" />
+        <meta name="robots" content="all" /> 
+        <meta name="language" content="br" /> 
+        <meta name="robots" content="follow" />	        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>      
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->     
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div  id="main">
+                <div class="row-fluid">
+                    <div class="separator-bar">
+                        <p><i class="icon-user icon-white"></i> IDENTIFICAÇÃO - CADASTRO</p>
+                    </div>
+                    <div class="page-content">
+                        <form name="f-atd" id="f-atd" action="[baseUri]/cliente/cadastrar/" autocomplete="off"
+                              class="form validate" method="post" >
+                            <span class="separator-line">Dados pessoais</span>                                    
+                            <div>
+                                <label for="cliente_nome">Nome Completo</label>
+                                <input type="text" name="cliente_nome" id="cliente_nome" class="required" placeholder="informe seu nome completo" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>
+                                <label for="cliente_cpf">CPF</label>
+                                <input type="text" name="cliente_cpf" id="cliente_cpf" class="required cpf" placeholder="informe seu cpf" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>                                                                               
+                                <label for="cliente_datan">Data de Nascimento</label>
+                                <input type="text" name="cliente_datan" id="cliente_datan" class="required datar" placeholder="informe sua data de nascimento" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+
+                            <span class="separator-line">contato</span>
+                            <div>
+                                <label for="cliente_telefone">Telefone Preferencial</label>
+                                <input type="text" name="cliente_telefone" id="cliente_telefone" class="required fone" placeholder="informe um telefone de contato" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>                                        
+                                <label for="cliente_celular">Telefone Móvel</label>
+                                <input type="text" name="cliente_celular" id="cliente_celular" class="cel" placeholder="informe um telefone móvel" />
+                            </div>
+                            <span class="separator-line">Dados de acesso</span>
+                            <div>
+                                <label for="cliente_email">E-mail</label>
+                                <input type="text" name="cliente_email" id="cliente_email" class="required email"  value="[cliente_email]" placeholder="informe seu e-mail"/>
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>
+                                <label for="cliente_password">Senha</label>
+                                <input type="password" name="cliente_password" id="cliente_password"  class="required password" minlength="6" autocomplete="off"
+                                       placeholder="Informe sua senha" />                                         
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div>
+                                <label for="cliente_passwordr">Confirme sua senha</label>
+                                <input type="password" name="cliente_passwordr" id="cliente_passwordr"  class="required password" minlength="6" autocomplete="off"
+                                       placeholder="Confirmar sua senha" /> 
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <span class="separator-line">Endereço</span>                                    
+                            <div>
+                                <label for="cliente_cep">CEP</label>
+                                <input type="text" name="cliente_cep" id="cliente_cep" class="cep required" maxlength="9" placeholder="informe seu cep" />
+                                <span class="f-atd-required">*</span>
+                            </div>
+                            <div class="hide-elem">
+                                <div>
+                                    <label for="cliente_rua">Endereço</label>
+                                    <input type="text" name="cliente_rua" id="cliente_rua" class="required" placeholder="nome da rua/av/logradouro" />
+                                    <span class="f-atd-required">*</span>
+                                </div>
+                                <div>
+                                    <label for="cliente_num">Número</label>
+                                    <input type="text" name="cliente_num" id="cliente_num" class="required" placeholder="informe o número" />
+                                    <span class="f-atd-required">*</span>
+                                </div>
+                                <div>
+                                    <label for="cliente_complemento">Complemento</label>
+                                    <input type="text" name="cliente_complemento" id="cliente_complemento" placeholder="ex: Bloco 5 - Ap 200" />
+                                </div>
+                                <div>
+                                    <label for="cliente_bairro">Bairro</label>
+                                    <input type="text" name="cliente_bairro" id="cliente_bairro" class="required" placeholder="informe o nome do bairro" />
+                                    <span class="f-atd-required">*</span>
+                                </div>
+                                <div>
+                                    <label for="cliente_cidade">Cidade</label>
+                                    <input type="text" name="cliente_cidade" id="cliente_cidade" class="required" placeholder="informe o nome da cidade" />
+                                    <span class="f-atd-required">*</span>
+                                </div>
+                                <div>
+                                    <label for="cliente_uf">UF/Estado</label>
+                                    <input type="text" name="cliente_uf" id="cliente_uf" class="required" maxlength="2" placeholder="informe a UF / estado ex: SP" />
+                                    <span class="f-atd-required">*</span>
+                                </div>
+                            </div>
+                            <br />
+                            <button type="submit" id="btn-send" class="btn"><i class="icon-edit"></i> Completar Cadastro</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>      
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>
+        <script src="js/jquery/validate/jquery.validate.v2.js" type="text/javascript"></script>
+        <script src="js/public/cliente.js" type="text/javascript"></script>
+        <script src="js/public/endereco.js" type="text/javascript"></script>        
+        <script>[msg_error]</script>        
+        <!--[if IE]>
+        <script src="js/jquery/jquery.placeholder.js" type="text/javascript"></script>
+        <script>$(function() { $('input, textarea').placeholder();});</script>
+        <![endif]-->        
+    </body>
+</html>

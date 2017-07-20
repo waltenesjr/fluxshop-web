@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | [config_site_description]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a class="current">Área do Cliente</a></li>
+                </ul>	
+                <div class="row-fluid">
+                    <p>&nbsp;</p>
+                    <div class="separator-bar">
+                        <p class="uppercase radius-3"><i class="itop icon-th-large icon-white"></i> Olá [cliente_nome], o que deseja fazer?</p>
+                    </div>
+                    <div class="visible-desktop">
+                        <a href="[baseUri]/" class="btn span3"><i class="icon-home itop-3"></i> Escolher mais produtos</a> 
+                        <a href="[baseUri]/cliente/dados/" class="btn span3"><i class="icon-edit itop-3"></i> Alterar meus dados</a>
+                        <a href="[baseUri]/cliente/endereco/" class="btn span3"><i class="icon-map-marker itop-3"></i> Alterar endereços</a>
+                        <a href="[baseUri]/cliente/pedidos/" class="btn span3"><i class="icon-gift itop-3"></i> Ver meus pedidos</a>
+                    </div>
+                    <div class="visible-phone">
+                        <a href="[baseUri]/" class="btn btn-custom btn-block"><i class="icon-home icon-white itop-3"></i> Voltar para o site</a> 
+                        <a href="[baseUri]/cliente/dados/" class="btn btn-custom btn-block"><i class="icon-edit icon-white itop-3"></i> Alterar meus dados</a>
+                        <a href="[baseUri]/cliente/endereco/" class="btn btn-custom btn-block"><i class="icon-map-marker icon-white itop-3"></i> Alterar endereços de entrega</a>
+                        <a href="[baseUri]/cliente/pedidos/" class="btn btn-custom btn-block"><i class="icon-gift icon-white itop-3"></i> Ver meus pedidos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>    
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<div id="top" class="container-fluid visible-desktop">
+    <div class="container">
+        <div class="row">
+            <div id="header">
+                <div class="span5 pull-left no-margin">
+                    <a href="[baseUri]/" >
+                        <img src="images/shoptime.png"  height="120" width="200"/>
+                    </a>
+                </div>
+                <div class="pull-right" id="basket">
+                    <a href="[baseUri]/cliente/">Ol� [cliente_nome], [cliente_msg]</a>
+                    <br /> 
+                    <a href="[baseUri]/carrinho/" ><img src="images/layout/icon-cart.png" width="28px" height="28px"/> MEU CARRINHO</a>                    
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid hidden-desktop">
+    <div class="span6 text-center" style="background-color: #f0f0f0">
+        <br />
+        <blockquote>
+            <p><img src="images/layout/logo.png" width="200px" height="87px" /></p>
+            <small>[config_site_description]</small>
+        </blockquote>        
+        <form  class="form" action="[baseUri]/index/busca/" method="post">
+            <input type="text"  name="busca" value="[busca]" required style="width: 80%" required
+                   placeholder="Digite aqui o que voc� est� procurando" />  
+            <br />
+            <button class="btn btn-custom">Buscar</button>
+        </form>     
+        <br />
+    </div>
+</div>
+
+<div class="container-fluid" id="top-menu">
+    <div class="container">
+        <div class="row">
+            <div class="navbar">
+                <div class="navbar-inner navbar-static-top">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target="#nav1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand visible-phone">MENU</a>
+                    <div class="nav-collapse collapse" id="nav1">
+                        <ul class="nav navbar-nav span8">
+                            <li id="home"><a href="[baseUri]/"><i class="icon-home icon-white"></i> HOME</a></li>
+                            <li id="promo"><a href="[baseUri]/index/promocoes/"><i class="icon-fire icon-white"></i> OFERTAS</a></li>
+                            <li class="nologged"><a href="[baseUri]/cliente/"><i class="icon-user icon-white"></i> LOGIN</a></li>
+                            <li class="nologged"><a href="[baseUri]/cliente/cadastro/"><i class="icon-edit icon-white"></i> CADASTRE-SE</a></li>
+                            <li class="logged hide"><a href="[baseUri]/cliente/"><i class="icon-edit icon-white"></i> MINHA CONTA</a></li>
+                            <li id="atd"><a href="[baseUri]/atendimento/" ><i class="icon-envelope icon-white"></i> ATENDIMENTO</a></li>
+                            <li class="hide cart-hide"><a href="[baseUri]/carrinho/"><i class="icon-shopping-cart icon-white"></i> CARRINHO</a></li>
+                            <li class="logged logout hide"><a href="[baseUri]/cliente/logout/"><i class="icon-off icon-white"></i> SAIR</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden-phone">
+                        <form  class="form " action="[baseUri]/index/busca/" method="post" 
+                               style="margin-top: 14px;">
+                            <input type="text"  name="busca" id="busca" value="[busca]" class="span3"  required
+                                   placeholder="Digite aqui o produto que procura" />  
+                            <button class="btn btn-custom" type="submit" style="margin-top: -10px;">
+                                <i class="icon-search icon-white"></i> 
+                                Buscar
+                            </button>
+                        </form>                                             
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="navbar navbar-inverses navbar-static-top" id="nav-menu">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target="#nav2">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand visible-phone">CATEGORIAS</a>
+                <div class="nav-collapse collapse" id="nav2">
+                    <ul class="nav" role="navigation">
+                        <!--{loop:cat}-->
+                        <li class="dropdown cat.categoria_url">
+                            <a id="drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                                <!--{cat.categoria_title}-->
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                <!--{loop:sub}-->
+                                <!--{<li><a href="[baseUri]/index/categoria/cat.categoria_url/cat.sub.sub_url/">cat.sub.sub_title</a></li>}-->
+                                <!--{end:sub}-->
+                            </ul>
+                        </li>
+                        <!--{end:cat}-->
+                        <li class="dropdown categoria-geral-ativa visible-phone">
+                            <a href="javascript:void(0)" role="button" class="dropdown-toggle" data-toggle="dropdown" >
+                                <span class="icon-th"></span>
+                                Toda a Loja
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                <!--{loop:depto}-->
+                                <!--{<li><a href="[baseUri]/index/categoria/depto.categoria_url/">depto.categoria_title</a></li>}-->
+                                <!--{end:depto}-->
+                            </ul>
+                        </li>
+                        <li class="index hidden-phone">						 
+                            <a href="javascript:void(0)" class="dropdown-toggle" id="show-lista-categorias">
+                                <i class="icon-th"></i> Toda a Loja
+                            </a>                        
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </div>      
+    <div id="lista-categorias" class="hidden-phone">
+        <div class="container" >
+            <div class="pull-left">
+                <h4 class="text-center font-bold">Navegue por todas as categorias da Loja</h4>
+                <!--{loop:depto-full}-->
+                <div class="depto">
+                    <!--{<p><b>depto-full.categoria_title</b></p>}-->
+                    <!--{loop:sub}-->
+                    <!--{<p><a href="[baseUri]/index/categoria/depto-full.categoria_url/depto-full.sub.sub_url/">depto-full.sub.sub_title</a></p>}-->
+                    <!--{end:sub}-->
+                </div>
+                <!--{end:depto-full}-->
+            </div>    
+        </div>    
+    </div>       
+</section> 

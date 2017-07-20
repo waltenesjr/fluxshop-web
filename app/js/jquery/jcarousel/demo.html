@@ -1,0 +1,26 @@
+<script type="text/javascript" src="jscripts/jquery/jquery.carouFredSel-5.6.4.js"></script>
+<link rel="stylesheet" href="jscripts/jquery/jcarousel/jcarousel.css" type="text/css" />
+
+
+
+<div id="banner-mini" class="image_carousel">
+    <div id="mycarousel">  
+        <a href=""> <img src="" /></a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="pagination" id="image_carousel_pag"></div>
+</div>
+
+
+$("#mycarousel").carouFredSel({
+auto : {
+pauseOnHover: true
+//easing      : "elastic"
+},
+pagination  : "#image_carousel_pag",
+scroll:{
+items           : 4,
+//duration        : 2000,
+pauseDuration   : 5000
+}
+});

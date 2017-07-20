@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Identificação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>     
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->      
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <div class="row-fluid">
+                    <div class="separator-bar no-margin"><p><i class="icon-white  icon-info-sign"></i> Logar na [config_site_title]</p></div>
+                    <div class="page-content no-margin">
+                        <div class="well">
+                            <form class="form" method="post" action="[baseUri]/cliente/login/">
+                                [message_login] <br />
+                                <fieldset>
+                                    <label><b>Qual é seu e-mail?</b></label>
+                                    <input id="cliente_email" name="cliente_email" type="email" placeholder="informe seu e-mail" 
+                                           class="input-xlarge" required="" value="[cliente_email]">
+                                    <p>&nbsp;</p>
+                                    <label><b>Você Já possui senha na [config_site_title]? </b></label>
+                                    <div class="control-group">
+                                        <label class="radio" for="cadastrar">
+                                            <input type="radio" id="cadastrar" class="cad" name="cliente_cadastrado" value="nao">
+                                            Não, mas quero criar minha conta.
+                                        </label>
+                                        <label class="radio" for="cadastrado">
+                                            <input type="radio" id="cadastrado" class="cad" name="cliente_cadastrado" value="sim" checked="checked">
+                                            <b>Sim</b>, minha senha é:
+                                        </label>
+                                    </div>
+                                    <input id="cliente_password" name="cliente_password" type="password" placeholder="informe sua senha" class="input-xlarge" required="">
+                                    <p>&nbsp;</p>
+                                    <button class="btn btn-success">Continuar</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <p class="font-20">Problemas para acessar sua conta?</p>
+                        <p>&nbsp;</p>
+                        <div class="span2 pull-left no-margin">
+                            <a href="[baseUri]/cliente/recuperar/senha/">Esqueci minha senha</a>
+                        </div>
+                        <div class="span2 pull-left">
+
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>
+        <script src="js/public/login.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>        
+        <script>[message_login]</script>        
+    </body>
+</html>

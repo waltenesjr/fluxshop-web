@@ -1,0 +1,47 @@
+body
+{
+    font:11px verdana,arial;
+}
+
+#scaff
+{
+    width:50%;
+    font:11px verdana,arial;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font:11px verdana,arial;
+    margin-bottom: 40px;
+}
+
+table th
+{
+    padding:4px;
+    font-weight: bold;
+    background-color: #dcdcdc;
+}
+
+table td 
+{
+    padding:2px;
+    background-color: #f0f0f0;
+}
+
+label
+{
+    display: block;
+    margin-top:8px; 
+}
+
+input 
+{
+    width: 100%;
+    padding:2px;
+    border:1px solid #333;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+}

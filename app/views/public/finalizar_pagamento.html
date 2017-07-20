@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finalização de Compra | [config_site_title]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <style>#main{min-height: 300px;}</style>
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>         
+   <!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <div class="row-fluid">
+                    <div class="status-compra pagamento"></div>
+                    <div class="separator-bar no-margin"><p><i class="icon-white  icon-info-sign"></i> Finalização de compra na [config_site_title] - Opções de pagamento</p></div>
+                    <div class="page-content no-margin">
+                        <p>&nbsp;</p>
+                        <div class="tab-pane" id="end2">
+                            <form action="[baseUri]/finalizar/confirmar/" method="post" id="form-pagamento">
+                                <div id="finaliza-pagamento" class="border-bottom">
+                                    <p class="font-16">Selecione um método de pagamento:</p>
+                                    <br />
+                                    <label class="radio" id="pagseguro">
+                                        <input type="radio" class="metodo-pagamento" name="pagamento"  value="pagseguro">
+                                        <b>Pagar com PagSeguro</b> <br/>
+                                        <i class="icon-info-sign"></i> Você poderá utilizar Cartão de Crédito, Transferência Bancária, 
+                                        Boleto Bancário ou Depósito. Além de contar com toda segurança da UOL.<br/>
+                                        <img src="helpers/pagseguro/img/pagseguro.gif"  alt="" style="margin-top: 10px"/>
+                                    </label>   
+                                    <br /> 
+                                    <!--
+                                    <label class="radio" id="paypal">
+                                        <input type="radio" class="metodo-pagamento" name="pagamento"  value="paypal">
+                                        <b>Pagar com PayPal</b> <br/>
+                                        <i class="icon-info-sign"></i> Você poderá utilizar Cartão de Crédito e Transferência entre contas PayPal. 
+                                        E contar com toda segurança PayPal Brasil.<br/>
+                                        <img src="helpers/paypal/img/logo.png" alt="" style="margin-top: 10px"/>
+                                    </label>  
+                                    <br />  
+                                    -->
+                                    <label class="radio" id="paybras">
+                                        <input type="radio" class="metodo-pagamento" name="pagamento"  value="paybras">
+                                        <b>Pagar com PayBras</b> <br/>
+                                        <i class="icon-info-sign"></i> Você poderá utilizar Cartão de Crédito, Boleto e Transferência Online. 
+                                        E contar com toda segurança e eficiência PayBras.<br/>
+                                        <img src="helpers/paybras/img/logo.png" alt="" style="margin-top: 10px"/>
+                                    </label>  
+                                    <p>&nbsp;</p>      
+                                </div>
+                                <p>&nbsp;</p>  
+                                <div class="pull-right">
+                                    <button class="btn btn-success btn-large" data-loading-text="Processando..." 
+                                            id="btn-finaliza" disabled="disabled">Aguardando seleção de pagamento</button>
+                                </div>
+                                <p>&nbsp;</p>  
+                                <p>&nbsp;</p>  
+                                <p>&nbsp;</p>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <div class="pushfooter"></div>
+        <?php include 'footer.html'; ?>      
+        <script src="js/public/finalizar.js" type="text/javascript"></script>
+        <script>[msg_error]</script>        
+        <script>[evt_onload]</script>        
+        <script>[disableMod]</script>        
+    </body>
+</html>

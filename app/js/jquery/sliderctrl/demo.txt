@@ -1,0 +1,20 @@
+http://www.eyecon.ro/bootstrap-slider/
+
+
+<input type="text" class="span2" value="" 
+                                        data-slider-min="10" 
+                                        data-slider-max="1000" 
+                                        data-slider-step="5" 
+                                        data-slider-value="[250,450]" 
+                                        id="range-preco" 
+                                        >
+                                 
+                                <input type="text" class="span2" value="" id="range-preco2"
+                                       data-slider-min="5" 
+                                       data-slider-max="5000" 
+                                       data-slider-step="1" 
+                                       data-slider-value="-14"
+                                       data-slider-orientation="horizontal"
+                                       data-slider-selection="after" 
+                                       data-slider-tooltip="hide"
+                                       >

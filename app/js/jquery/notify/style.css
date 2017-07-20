@@ -1,0 +1,55 @@
+#notifications .close-bt {
+    display: block;
+    position: absolute;
+    top: 0.083em;
+    right: 0.083em;
+    font-size: 1em;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0;
+    background: url(../../images/default/cross-small.png) no-repeat center center;
+    cursor: pointer;
+    -moz-border-radius: 0.333em;
+    -webkit-border-radius: 0.333em;
+    -webkit-background-clip: padding-box;
+    border-radius: 0.333em;
+    opacity: 0.5;
+    filter: alpha(opacity=0.5);
+}
+#notifications .close-bt:hover,
+ul li.close-bt:hover {
+    opacity: 1;
+    filter: none;
+}
+#notifications {
+    position: fixed;
+    z-index: 999990;
+    top: 1em;
+    right: 1em;
+    width: 25em;
+}
+#notifications h1{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 11px;
+    line-height: 12px;
+}
+#notifications li {
+    display: none;
+    position: relative;
+    /*background: url(../../images/default/black80.png);
+    background: rgba(0, 0, 0, 0.8);*/
+    background-color: #4C555B;
+    padding: 1em;
+    color: white;
+    margin-bottom: 1em;
+    -moz-border-radius: 0.417em;
+    -webkit-border-radius: 0.417em;
+    -webkit-background-clip: padding-box;
+    border-radius: 0.417em;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    list-style-type: none;
+}

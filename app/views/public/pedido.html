@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Pedido</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <meta charset="iso-8859-1" />    
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>  
+        <script src="js/jquery/jquery-ui-1.9.2.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a href="[baseUri]/cliente/">Área do Cliente</a></li>
+                    <li><a class="current">Meus Pedidos</a></li>
+                </ul>
+                
+                <div class="separator-bar margin-bottom-10">
+                    <p class="radius-3"><i class="icon-gift icon-white"></i> Meus Pedidos</p>
+                </div>
+                <div class="row-fluid">
+                    <div class="box-cart">  
+                        <table class="[showHide] table-td-center">
+                            <thead>
+                                <tr>
+                                    <th width="60">Pedido</th>
+                                    <th width="100">Data</th>
+                                    <th width="350">Produtos (resumo)</th>
+                                    <th width="130">Status do Pedido</th>
+                                    <th>Valor</th>
+                                    <th width="100">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--{loop:cart}-->
+                                <!--{<tr id="cart.lista_id">}-->
+                                <!--{<td><p>cart.pedido_id</p></td>}-->
+                                <!--{<td><p>cart.pedido_data</p></td>}-->
+                                <!--{<td><p>cart.lista_title cart.lista_atributo_ped</p></td>}-->
+                                <!--{<td><p>cart.pedido_status</p></td>}-->                          
+                                <!--{<td><p><center>R$ cart.pedido_total_frete</p></td>}-->                            
+                                <!--{<td><p><a class="btn btn-mini" href="[baseUri]/cliente/pedido/cart.pedido_id/">}-->
+                                <!--{<i class="icon-zoom-in itop"></i> ver detalhes</a></p></td>}-->                            
+                                <!--{</tr>}-->
+                                <!--{end:cart}-->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>                                    
+                            </tfoot>
+                        </table>
+                        [msg_pedido]
+                        <div>
+                            <br />
+                            <a href="[baseUri]/" class="btn btn-small"><i class="icon-chevron-left itop"></i> Voltar para o site</a> 
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>
+        <script type="text/javascript" src="js/jquery/jquery.mask.js"></script>        
+        <script src="js/public/carrinho.js" type="text/javascript"></script>        
+    </body>
+</html>

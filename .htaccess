@@ -1,0 +1,32 @@
+# Descomente as 2 linhas abaixo caso versao de seu  PHP seja >= 5.4
+#php_flag display_errors off
+#php_value display_errors 0
+
+RewriteEngine On
+
+# Diretorios extras
+RewriteRule ^teste - [L,NC]
+
+#padrozinar diretorio /admin
+RewriteRule ^admin/([a-zA-Z0-9-_/]+)/?$ ./index.php?dir=admin&route=$1 [L,QSA]
+RewriteRule ^admin/([a-zA-Z0-9-_/]+)?$ ./index.php?dir=admin&route=index [L,QSA]
+RewriteRule ^admin([a-zA-Z0-9-_/]+)?$ ./index.php?dir=admin&route=index [L,QSA]
+
+#chat
+RewriteRule ^atd - [L,NC]
+RewriteRule ^/atd - [L,NC]
+RewriteCond $1 !^(css|js|img|fotos|slide)/
+
+#Diretorios da base
+RewriteRule ^([a-zA-Z0-9-_/]+)/?$ ./index.php?route=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9-_/]+)?$ ./index.php?route=index [L,QSA]
+
+#SSL
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+#Pagina 404
+ErrorDocument 404 404.php

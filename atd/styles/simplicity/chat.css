@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+    padding:0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333;
+}
+
+.add-on{
+    min-width:120px !important;
+    text-align:right !important;
+}
+
+#postmessage a{
+    color:#fff !important; 
+    text-decoration:none !important; 
+}

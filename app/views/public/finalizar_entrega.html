@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finalização de Compra | [config_site_title]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <meta name="description" content="[config_site_description]">
+        <meta name="author" content="Rafael Clares">        
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css"/>  
+        <style>#main{min-height: 300px;}</style>
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>    
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div id="main">
+                <div class="row-fluid">
+                    <div class="status-compra entrega"></div>
+                    <div class="separator-bar no-margin"><p><i class="icon-white icon-info-sign"></i> Finalização de compra na [config_site_title] - Opções de entrega</p></div>
+                    <div class="page-content no-margin">
+                        <p>&nbsp;</p>
+                        <div class="tab-pane" id="end2">
+                            <form action="[baseUri]/finalizar/pagamento/" method="post">
+                                <div id="entrega" class="border-bottom">
+                                    <p class="font-16">
+                                        Selecionar um dos meus endereços de entrega:
+                                        <span class="pull-right">
+                                            <a class="btn btn-small btn-link" href="[baseUri]/finalizar/novoendereco/">
+                                                <i class="icon-plus-sign"></i> 
+                                                Cadastrar novo endereço
+                                            </a>
+                                        </span>
+                                    </p>
+                                    <br />
+                                    <!--{loop:addr}-->
+                                    <!--{<label class="radio">}-->
+                                    <!--{<input type="radio" name="endereco_entrega" class="end-entrega" tipo="1" value="addr.endereco_id" cep="addr.endereco_cep" addr="<b>Entregar em: </b> addr.endereco_title - addr.endereco_cidade/addr.endereco_uf">}-->
+                                    <!--{<b>addr.endereco_title - addr.endereco_cidade/addr.endereco_uf</b> <br/>}-->
+                                    <!--{<i class="icon-map-marker"></i> addr.endereco_rua, addr.endereco_num, addr.endereco_bairro, addr.endereco_cidade - addr.endereco_uf | Cep: addr.endereco_cep <br/>}-->
+                                    <!--{<br/>}--> 
+                                    <!--{</label>}--> 
+                                    <!--{end:addr}-->       
+                                </div>
+                                <p>&nbsp;</p>  
+                                <div id="retirada" class="border-bottom">
+                                    <p class="font-16">Retirar em um dos locais disponíveis:</p>
+                                    <br />                                         
+                                    <!--{loop:raddr}-->
+                                    <!--{<label class="radio">}-->
+                                    <!--{<input type="radio" name="endereco_entrega" class="end-entrega" tipo="2" value="raddr.retirada_id" cep="raddr.retirada_cep" addr="<b>Retirar em: </b>raddr.retirada_local - raddr.retirada_cidade/raddr.retirada_uf">}-->
+                                    <!--{<b>raddr.retirada_local - raddr.retirada_cidade/raddr.retirada_uf</b> <br/>}-->
+                                    <!--{<i class="icon-map-marker"></i> raddr.retirada_rua, raddr.retirada_num, raddr.retirada_bairro, raddr.retirada_cidade - raddr.retirada_uf | Cep: raddr.retirada_cep<br/>}-->
+                                    <!--{<i class="icon-phone"></i> raddr.retirada_telefone <br/>}-->
+                                    <!--{<i class="icon-time"></i> raddr.retirada_horario <br/>}-->
+                                    <!--{</label>}-->                                                
+                                    <!--{<p>&nbsp;</p>}-->                                                
+                                    <!--{end:raddr}-->   
+                                </div>
+
+  
+								
+                                <p><i class="icon-info-sign"></i> Caso tenha alguma dúvida sobre retirada no local, entre em contato com nossa central através do telefone [config_site_fone1].</p>                                        
+
+                                                   
+                             <div class="pull-right">
+                                    <button class="btn btn-success btn-large" id="btn-finaliza" type="submit"
+                                            data-loading-text="Aguarde..."  disabled="disabled">Prosseguir</button>
+											<br /><br />
+                                </div>
+								
+								
+                                <div class="hide">
+                                    <input type="text" name="entrega_selecionada" id="entrega_selecionada" />
+                                    <input type="text" name="entrega_selecionada_tipo" id="entrega_selecionada_tipo" />
+                                    <input type="text" name="entrega_selecionada_id" id="entrega_selecionada_id" />
+                                    <input type="text" name="entrega_selecionada_desc" id="entrega_selecionada_desc" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hide fade" id="modal-frete">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5>SELECIONE O TIPO DE ENTREGA!</h5>
+            </div>
+            <div class="modal-body">
+                <div id="frete_result"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div> 
+        <?php include 'footer.html'; ?>       
+        <script src="js/public/finalizar.js" type="text/javascript"></script>
+        <script>[msg_error]</script>        
+        <script>[evt_onload]</script>        
+    </body>
+</html>

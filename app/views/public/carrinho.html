@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Meu Carrinho</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <meta name="title" content="[config_site_title] | Meu Carrinho" />       
+        <link rel="canonical" href="[baseUri]/carrinho/" />
+        <meta name="author" content="Rafael Clares" />
+        <meta name="robots" content="all" /> 
+        <meta name="language" content="br" /> 
+        <meta name="robots" content="follow" />	        
+        <link href="js/jquery/flexslider/flexslider.css" rel="stylesheet" type="text/css" />                 
+        <link href="js/jquery/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="css/public/main.css" rel="stylesheet" type="text/css" />  
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery-ui-1.9.2.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+  <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <?php include 'topo.html'; ?>
+        <div class="container">
+            <div  id="main">
+                <ul id="breadcrumbs-one">
+                    <li><a href="[baseUri]/">Home</a></li>
+                    <li><a class="current">Meu Carrinho</a></li>
+                </ul>	
+                <div class="row-fluid">
+                    <div class="box-cart">  
+                        <div id="carrinho-cheio" class="[showCheckout]">
+                            <div class="pull-right">
+                                <a class="btn btn-success " href="[baseUri]/finalizar/">
+                                    <i class="icon-white icon-ok itop-3 "></i> 
+                                    Finalizar Compra
+                                </a>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                        <table class="[showCheckout]">
+                            <thead>
+                                <tr>
+                                    <th width="70">&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th width="100"><b>quantidade</b></th>
+                                    <th width="100"><b>valor unitário</b></th>
+                                    <th width="100"><b>valor total</b></th>
+                                    <th width="40">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--{loop:cart}-->
+                                <!--{<tr id="cart.cart_id">}-->
+                                <!--{<td>}-->
+                                <!--{<div><img id="div_foto_cart.cart_id" src="[baseUri]/thumb/cart.item_foto/70/70/crop/" /></div>}-->
+                                <!--{</td>}-->
+                                <!--{<td class="hide-phone">}-->
+                                <!--{<p>cart.item_title<br/> cart.atributo_ped</p>}-->
+                                <!--{</td>}-->
+                                <!--{<td>}-->
+                                <!--{<input type="hidden" class="qtde" name="cart_id" id="qtde_cart.cart_id" value="cart.item_qtde" maxlength="3" />}-->
+                                <!--{<span class="input_qtde">cart.item_qtde</span>}-->
+                                <!--{<div class="arrows">}-->
+                                <!--{<span class="arrow_up tips-top cart-add" name="cart.cart_id"></span>}-->
+                                <!--{<span class="arrow_down tips-top cart-remove" name="cart.cart_id"></span>}-->
+                                <!--{</div>}-->
+                                <!--{</td>}-->
+                                <!--{<td>}-->
+                                <!--{<p><span class="linet cart.showhide_valorOri">R$ cart.item_valor_original</span> <br class="cart.showhide_valorOri" />}-->
+                                <!--{R$ cart.item_preco</p>}-->
+                                <!--{</td>}-->                            
+                                <!--{<td>}-->
+                                <!--{<p>R$ <span class="sp_total">cart.valor_total</span></p>}-->
+                                <!--{</td>}-->                            
+                                <!--{<td>}-->
+                                <!--{<p><img src="images/icons/cartremove.png" class="btn-cart-remove pointer" id="cart.cart_id"/></p>}-->
+                                <!--{</td>}-->                            
+                                <!--{</tr>}-->
+                                <!--{end:cart}-->
+                                <tr>
+                                    <td colspan="6">
+                                        <table id="tbl_calculo_frete">
+                                            <tr>
+                                                <td width="400">        
+                                                    <p class="font-12"> <b>Calcule o frete para sua região: </b></p>                                                    
+                                                    <br />
+                                                    <input style="width:140px"  name="frete_cep" id="frete_cep" type="text" placeholder="Informe seu cep" value="[mycep]" />
+
+                                                    <button class="btn btn-small" 
+                                                            id="btn-frete-calculo" 
+                                                            data-loading-text="calculando..."
+                                                            data-complete-text="calcular"
+                                                            ><i class="icon-cog"></i> calcular</button>   
+                                                    <br /><br />
+                                                    <a href="http://www.buscacep.correios.com.br/servicos/dnec/menuAction.do?Metodo=menuEndereco" target="_blank">Não sei meu cep</a>
+                                                    <br /><br />
+                                                </td>
+                                                <td width="400">
+                                                    <span id="frete_result_pac" class="frete_result_pac"> </span>                                                    
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>                                    
+                            </tfoot>
+                        </table>
+                        <p class="a-right total_compra [showCheckout] font-16"> Total: <span id="total_compra">[cartTotal]</span></p>
+                        <div id="carrinho-vazio" class="[showEmptyCart] img-polaroid text-center">
+                            <a href="[baseUri]/"><img src="images/layout/cart_vazio.png" class=""/></a>
+                        </div>
+                        <br />
+                        <div id="carrinho-cheio" class="[showCheckout]">
+                            <div class="pull-right">
+                                <a href="[baseUri]/" class="btn-link btn font-15 font-bold i-top"> Escolher mais produtos</a>
+                                <b class="font-14 font-gray" style="padding-top: 2px"> ou &nbsp;  </b> 
+                                <a class="btn btn-success " href="[baseUri]/finalizar/">
+                                    <i class="icon-white icon-ok itop-3 "></i> 
+                                    Finalizar Compra
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include 'footer.html'; ?>
+        <script src="js/jquery/jquery.mask.js" type="text/javascript"></script>        
+        <script src="js/public/carrinho.js" type="text/javascript"></script>                
+    </body>
+</html>
